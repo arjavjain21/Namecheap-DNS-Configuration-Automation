@@ -1,0 +1,4 @@
+domain,verification_txt_value,dkim_value,ctd_cname_value,redirect_domain,verification_txt_value_done,dmarc_done,spf_done,dkim_value_done,ctd_cname_value_done,redirect_domain_done
+example.com,some_verification_txt_value,some_dkim_value,tracking.example.com,redirect.example.com,,,,,,
+testdomain.com,another_verification_txt_value,another_dkim_value,tracking.testdomain.com,redirect.testdomain.com,,,,,,
+demo.com,third_verification_txt_value,third_dkim_value,tracking.demo.com,redirect.demo.com,,,,,,
