@@ -1,0 +1,1 @@
+# Namecheap-DNS-Configuration-Automation
