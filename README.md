@@ -16,6 +16,13 @@ The "Namecheap DNS Configuration Automation Tool" is a Python script designed to
 - Data Updates: The script updates the CSV file with a 'done' status for each DNS record type, indicating that the record has been configured successfully.
 - Opening Output: After completion, the script opens the output.txt file, allowing users to review the execution results.
 
+# Handling Existing Records:
+
+One notable feature of the script is its ability to detect and handle previously added DNS records for domains listed in the same CSV file. When the script is executed, it checks if any of the DNS records (e.g., Verification TXT, SPF, DMARC, DKIM, CTD CNAME, or Redirect Domain) already exist for a domain. This is achieved by examining the values in the xyz_done columns (e.g., verification_txt_value_done, dmarc_done, spf_done, dkim_value_done, ctd_cname_value_done, redirect_domain_done).
+
+1. If a record is already present (indicated by "yes" in the respective xyz_done column), the script skips re-adding that specific DNS record for the domain. This ensures that existing records remain unchanged, and there is no duplication of DNS configurations for the same domain.
+2. If a record is not present (indicated by "no" or an empty value in the xyz_done column), the script proceeds to add the DNS record using the corresponding API command.
+
 # Usage:
 Prepare your csv file with domain information and required DNS values.
 Ensure that the namecheap-api-cli Python package is installed using pip install namecheap-api-cli.
